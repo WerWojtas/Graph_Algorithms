@@ -1,0 +1,6 @@
+__pycache__/
+Tests/*
+Model/dimacs.py
+lab1/__pycache__/
+lab2/__pycache__/
+Model/__pycache__/
