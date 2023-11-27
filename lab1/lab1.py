@@ -44,7 +44,7 @@ def check_solution():  # Templatka do sprawdzania zadań
                         end_time1 = time.process_time()
                         my_sol2 = bs.binary_search(my_graph,args)
                         end_time2 = time.process_time()
-                        my_sol3 = Dijkstra(my_graph,args)
+                        my_sol3 = Dijkstra(my_graph,)
                         end_time3 = time.process_time()
                         if my_sol1 == int(sol):
                             counter2 +=1

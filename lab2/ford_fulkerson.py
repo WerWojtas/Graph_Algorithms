@@ -20,7 +20,7 @@ def residual(G,Parent,vertex,max_flow):
     
 
 def ford_fulkerson(my_graph,s):
-    G = my_graph.change_representation_residual(0,len(my_graph.edges)-1)
+    G = my_graph.change_representation_residual()
     s = s-1
     t = len(G) -1
     max_depth = 1000
@@ -53,7 +53,7 @@ def ford_fulkerson(my_graph,s):
         Parent = [None]*len(G)
 
 
-    return flow
+    return flow, "Ford-Fulkerson"
 
 
 T = [(1,3,6),(1,4,3),(3,4,1),(3,5,2),(3,6,2),(4,6,1),(4,5,2),(6,5,2),(5,2,4),(6,2,4)]

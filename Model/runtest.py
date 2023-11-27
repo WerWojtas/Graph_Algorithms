@@ -9,6 +9,8 @@ from lab1.dijkstra import Dijkstra
 from lab1.find_union import find_edge
 from lab2.edmonds import edmonds_karp
 from lab2.ford_fulkerson import ford_fulkerson
+from lab3.edge_coherence import edge_coherence
+from lab4.stoer_wagner import stoer_wagner
 
 
 class Test():
@@ -20,6 +22,12 @@ class Test():
             self.args = (1,2, bs.BFS_list)
         if lab_no == 2:
             self.load_graph = dimacs.loadDirectedWeightedGraph
+            self.args = 1
+        if lab_no == 3:
+            self.load_graph = dimacs.loadWeightedGraph
+            self.args = 1
+        if lab_no == 4: 
+            self.load_graph = dimacs.loadWeightedGraph
             self.args = 1
 
     def runtest(self):
@@ -33,7 +41,9 @@ class Test():
             count = 0
             flag = 0
             for file in files:
-                print("File {}: ",file)
+                if file =="grid100x100":
+                    continue
+                print(f"File {file}: ")
                 file_path = os.path.join(folder_path,file)
                 with open(file_path,"r") as G:
                     counter = 0
@@ -62,7 +72,7 @@ class Test():
                 print("Function: {}, Final time {:.3f} s".format(names[i],times[i]))
 
 
-test = Test([bs.binary_search,Dijkstra,find_edge],1)
+test = Test([stoer_wagner],4)
 test.runtest()
 
 
